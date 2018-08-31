@@ -3,6 +3,10 @@ plugins {
     id "edu.wpi.first.GradleRIO" version "2019.0.0-alpha-3"
 }
 
+repositories {
+    mavenCentral()
+}
+
 def ROBOT_CLASS = "###ROBOTCLASSREPLACE###"
 
 // Define my targets (RoboRIO) and artifacts (deployable files)
@@ -40,6 +44,7 @@ dependencies {
     compile wpilib()
     compile ctre()
     compile navx()
+    compile 'org.eclipse.jetty.aggregate:jetty-all:9.4.12.v20180830'
 }
 
 // Setting up my Jar File. In this case, adding all libraries into the main jar ('fat jar')
